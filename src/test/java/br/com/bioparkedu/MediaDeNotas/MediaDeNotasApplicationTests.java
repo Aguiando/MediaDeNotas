@@ -51,4 +51,18 @@ public class MediaDeNotasApplicationTests {
 		assertEquals(2.67, media, 0.01); // Verifica a média com precisão de 0.01
 		assertEquals("Reprovado", status); // Verifica se o status é "Reprovado"
 	}
+
+	@Test
+	public void testMediaAcima(){
+		//Cenário: Notas acima de 10.00
+		Aluno aluno = new Aluno("Dante", 11.00, 11.00, 11.00);
+		ServiceMediaDeNotas service = new ServiceMediaDeNotas();
+
+		//Ação
+		double media = aluno.media();
+		String status = service.mediaAcimaDeDez(media);
+
+		//Verificação
+		assertEquals(11.00, media, 0.01);
+	}
 }

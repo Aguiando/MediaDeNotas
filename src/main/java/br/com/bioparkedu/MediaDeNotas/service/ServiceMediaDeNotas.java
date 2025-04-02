@@ -19,4 +19,13 @@ public class ServiceMediaDeNotas {
             return "Reprovado";
         }
     }
+
+    //Validação da media de notas ate 10.00
+    public String mediaAcimaDeDez(double media) {
+        if (media > 10) {
+            return "Erro, notas acima do valor máximo";
+        } else
+            return "Notas validadas";
+    }
 }
+
